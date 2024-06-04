@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(){
   }
   hello(){
-    return 'Hello'
+    return 'Hello World'
   }
 }
