@@ -5,9 +5,13 @@ import { RouterOutlet } from '@angular/router';
   selector: 'pm-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  template: 'sad',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'AngularTesting';
+  constructor(){
+  }
+  hello(){
+    return 'Hello'
+  }
 }
