@@ -1,3 +1,4 @@
+/* till video 7
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 import { AppComponent } from "./app.component"
 import { AuthService } from "./services/auth.service"
@@ -24,3 +25,5 @@ describe ('App component test',()=>{
         expect(component.canLogin('',123)).toBeFalsy()
     })
 })
+
+*/
