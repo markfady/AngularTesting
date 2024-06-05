@@ -11,5 +11,11 @@ export class AuthService {
     // return !!localStorage.getItem('token') //if localStorage has token will return boolean value
     return this.loginService.isLogin();
   }
-
+  appAuth(username:string,password:number):boolean{
+    if(username&&password){
+      return true
+    }else{
+      return false
+    }
+  }
 }
