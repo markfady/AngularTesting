@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'pm-root',
@@ -9,9 +10,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(){
+  title='title'
+  constructor(private authService:AuthService){
   }
   hello(){
     return 'Hello World'
+  }
+  canLogin(username:string,password:number):boolean{
+    return this.authService.appAuth(username,password)
   }
 }
