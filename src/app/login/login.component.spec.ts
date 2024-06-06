@@ -1,5 +1,5 @@
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
 import { User } from '../user';
 import { LoginComponent } from './login.component';
 import { DebugElement } from '@angular/core';
@@ -13,6 +13,11 @@ let submitElement:DebugElement
 let emailElement:DebugElement
 let passwordElement:DebugElement
 beforeEach(function(){
+  TestBed.configureTestingModule({
+    providers:[
+      {provide:ComponentFixtureAutoDetect,useValue:true}
+    ]
+  })
     comp=new LoginComponent();
     userMock={email:'test@gmail.com',password:'123456'}
     fixture=TestBed.createComponent(LoginComponent)
@@ -56,5 +61,13 @@ it('Form submitData must emit email and password like our mock',()=>{
   submitElement.triggerEventHandler('click',null)
   expect(user?.email).toBe(userMock.email);
   expect(user?.password).toBe(userMock.password);
+})
+
+
+it('test binding',()=>{
+  const h1:HTMLElement=fixture.nativeElement.querySelector('h1')
+  console.log(h1)
+  // fixture.detectChanges()
+  expect(h1.textContent).toBe(comp.title)
 })
 });
