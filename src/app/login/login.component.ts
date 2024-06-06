@@ -6,12 +6,14 @@ import { User } from '../user';
   standalone: true,
   imports: [],
   templateUrl: './login.component.html',
+
 })
 export class LoginComponent implements OnInit {
-
+  title!: string;
   isLoggedIn:boolean
   @Output() submitData:EventEmitter<User>
   constructor(){
+    this.title='hello'
     this.isLoggedIn=false
     this.submitData=new EventEmitter<User>() //instance from the output
   }
